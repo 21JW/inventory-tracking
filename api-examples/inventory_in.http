@@ -1,0 +1,51 @@
+### create an inventory_in record
+POST http://localhost:8080/api/inventory-in
+Content-Type: application/json
+
+{
+  "item_code": "A0006",
+  "initial_num": 115.5,
+  "unit": "kg",
+  "cost": 215.9,
+  "currency": "CAD"
+}
+
+
+### edit an inventory_in record
+### please provide a valid id
+PUT http://localhost:8080/api/inventory-in
+Content-Type: application/json
+
+{
+  "id": "a valid id",
+  "unit": "ton",
+  "currency": "USD",
+  "note": "a note"
+}
+
+
+### list inventory_in records by page
+### page: page number
+### size: size of a page
+GET http://localhost:8080/api/inventory-in/page?page=1&size=3
+
+
+### list all inventory_in records
+GET http://localhost:8080/api/inventory-in
+
+
+### delete inventory_in records
+### could delete multiple rows at once
+DELETE http://localhost:8080/api/inventory-in
+Content-Type: application/json
+
+{
+  "ids" : ["a valid id", "another valid id"]
+}
+
+
+### export csv
+### the file will be stored in "\csv"
+GET http://localhost:8080/api/inventory-in/csv
+
+###

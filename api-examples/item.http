@@ -1,0 +1,47 @@
+### create an item
+### code should be unique
+POST http://localhost:8080/api/item
+Content-Type: application/json
+
+{
+  "name": "item 1",
+  "code": "A0001"
+}
+
+
+### edit an item
+### please provide a valid id
+PUT http://localhost:8080/api/item
+Content-Type: application/json
+
+{
+  "id": "a valid id",
+  "name":"item 10",
+  "code": "A0010"
+}
+
+
+### list items by page
+### page: page number
+### size: size of a page
+GET http://localhost:8080/api/item/page?page=1&size=5
+
+
+### list all items
+GET http://localhost:8080/api/item
+
+
+### delete items
+DELETE http://localhost:8080/api/item
+Content-Type: application/json
+
+{
+  "ids" : ["a valid id","another valid id"]
+}
+
+
+### export csv
+### the file will be stored in "\csv"
+GET http://localhost:8080/api/item/csv
+
+###

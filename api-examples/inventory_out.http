@@ -1,0 +1,47 @@
+### create an inventory_out record
+### please provide a valid inventory_in id
+POST http://localhost:8080/api/inventory-out
+Content-Type: application/json
+
+{
+  "inventory_in_id": "a valid inventory_in id",
+  "num": 10.55
+}
+
+
+### edit an inventory_out record
+### please provide a valid id
+PUT http://localhost:8080/api/inventory-out
+Content-Type: application/json
+
+{
+  "id": "a valid id",
+  "note": "a note"
+}
+
+
+### list inventory_out records by page
+### page: page number
+### size: size of a page
+GET http://localhost:8080/api/inventory-out/page?page=1&size=3
+
+
+### list all inventory_out records
+GET http://localhost:8080/api/inventory-out
+
+
+### delete inventory_out records
+### could delete multiple rows at once
+DELETE http://localhost:8080/api/inventory-out
+Content-Type: application/json
+
+{
+  "ids" : ["a valid id", "another valid id"]
+}
+
+
+### export csv
+### the file will be stored in "\csv"
+GET http://localhost:8080/api/inventory-out/csv
+
+###
